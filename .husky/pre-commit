@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+yarn enforce-branch-name '(hotfix|bugfix|feature)\/.+' --ignore 'staging|dev|main'
+yarn lint
+yarn deadcode
+yarn spell
